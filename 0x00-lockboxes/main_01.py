@@ -29,3 +29,7 @@ print(canUnlockAll(boxes)) # True
 boxes = [[]]
 print("[6]: True = ", end="")
 print(canUnlockAll(boxes)) # True
+
+boxes = [[-1, -2, 1, 2], [0], []]
+print("[6]: True = ", end="")
+print(canUnlockAll(boxes)) # True

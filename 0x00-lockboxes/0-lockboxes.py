@@ -8,7 +8,9 @@ def canUnlockAll(boxes):
     bx_len = len(boxes)
 
     if bx_len > 1:
-        unlockeds += boxes[0]
+        for j in boxes[0]:
+            if j not in unlockeds and j < bx_len and j > 0:
+                unlockeds.append(j)
     else:
         return True
 
