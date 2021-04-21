@@ -7,8 +7,10 @@ def canUnlockAll(boxes):
     unlockeds = [0]
     bx_len = len(boxes)
 
-    if bx_len > 0:
+    if bx_len > 1:
         unlockeds += boxes[0]
+    else:
+        return True
 
     i = 1
     while i < len(unlockeds):
