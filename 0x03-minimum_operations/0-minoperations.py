@@ -25,14 +25,13 @@ def minOperations(n):
 
     while (True):
         tmp = tmp_int / multi
-        p = tmp_int // multi
 
         if tmp_int == 1:
             break
 
-        if tmp != p:
+        if not tmp.is_integer():
             multi += 1
-        elif tmp == p:
+        elif tmp.is_integer():
             fewest_num += multi
             multi = 2
             tmp_int = tmp
