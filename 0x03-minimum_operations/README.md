@@ -13,3 +13,10 @@ In a text file, there is a single character <code>H</code>. Your text editor can
 <p><code>H</code> -&gt; <code>Copy All</code> -&gt; <code>Paste</code> -&gt; <code>HH</code> -&gt; <code>Paste</code> -&gt;<code>HHH</code> -&gt; <code>Copy All</code> -&gt; <code>Paste</code> -&gt; <code>HHHHHH</code> -&gt; <code>Paste</code> -&gt; <code>HHHHHHHHH</code></p>
 
 Number of operations: <code>6</code>
+
+## Files
+<strong>0-main.py</strong>
+- tests file
+
+<strong>0-minoperations.py</strong>
+- test with the algorithm

@@ -20,7 +20,7 @@ def minOperations(n):
     tmp = n
     tmp_int = n
 
-    if type(n) != int:
+    if type(n) != int or n < 1:
         return 0
 
     while (True):
