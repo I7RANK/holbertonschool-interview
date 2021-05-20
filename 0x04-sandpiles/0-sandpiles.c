@@ -1,9 +1,5 @@
 #include "sandpiles.h"
 
-void loop_and_overflow(int grid1[3][3], int grid2[3][3]);
-void grid_overflow(int grid1[3][3], int grid2[3][3]);
-int check_overflow(int num, int *over);
-
 /**
  * print_grid - Print 3x3 grid
  * @grid: 3x3 grid
