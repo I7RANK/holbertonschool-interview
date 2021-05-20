@@ -54,8 +54,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 */
 void loop_and_overflow(int grid1[3][3], int grid2[3][3])
 {
-	int overflow = 0;
-	int i, j;
+	int overflow = 0, i, j;
 
 	while (1)
 	{
@@ -84,7 +83,6 @@ void loop_and_overflow(int grid1[3][3], int grid2[3][3])
 						grid1[i][j - 1] += 1;
 						grid2[i][j - 1] = check_overflow(grid1[i][j - 1], &overflow);
 					}
-
 					grid1[i][j] -= 4;
 				}
 				grid2[i][j] = check_overflow(grid1[i][j], &overflow);
@@ -92,9 +90,7 @@ void loop_and_overflow(int grid1[3][3], int grid2[3][3])
 		}
 
 		if (overflow)
-		{
 			overflow = 0;
-		}
 		else
 			break;
 	}
