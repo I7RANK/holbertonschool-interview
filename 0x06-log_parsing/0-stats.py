@@ -2,13 +2,9 @@
 """ This module contains the Log parsing script """
 
 
-import sys
+from sys import stdin
 
-
-counter = 0
-sizes = 0
-
-status_code_counter = {
+status_codes = {
     "200": 0,
     "301": 0,
     "400": 0,
@@ -19,27 +15,33 @@ status_code_counter = {
     "500": 0
 }
 
-
-def print_dict(dicti):
-    for k, v in dicti.items():
-        if v > 0:
-            print(k, v)
+size = 0
 
 
-try:
-    for input_format in sys.stdin:
-        input_format_list = input_format.split()
+def print_stats():
+    """Prints the accumulated logs"""
+    print("File size: {}".format(size))
+    for status in sorted(status_codes.keys()):
+        if status_codes[status]:
+            print("{}: {}".format(status, status_codes[status]))
 
-        if len(input_format_list) > 2:
-            counter += 1
-            if input_format_list[-2] in status_code_counter:
-                status_code_counter[input_format_list[-2]] += 1
-            sizes += int(input_format_list[-1])
 
-            if counter == 10:
-                print("File size:", sizes)
-                print_dict(status_code_counter)
-                counter = 0
-finally:
-    print("File size:", sizes)
-    print_dict(status_code_counter)
+if __name__ == "__main__":
+    count = 0
+    try:
+        for line in stdin:
+            try:
+                items = line.split()
+                size += int(items[-1])
+                if items[-2] in status_codes:
+                    status_codes[items[-2]] += 1
+            except:
+                pass
+            if count == 9:
+                print_stats()
+                count = -1
+            count += 1
+    except KeyboardInterrupt:
+        print_stats()
+        raise
+    print_stats()
