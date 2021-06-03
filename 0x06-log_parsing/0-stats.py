@@ -24,7 +24,7 @@ def print_dict(dicti):
     """ print a dictionary """
     for k, v in dicti.items():
         if v > 0:
-            print(f"{k}: {v}")
+            print("{}: {}".format(k, v))
 
 
 try:
