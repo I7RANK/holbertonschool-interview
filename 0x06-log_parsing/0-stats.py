@@ -30,19 +30,18 @@ def print_dict(dicti):
 try:
     for line in sys.stdin:
         counter += 1
-        input_format_list = line.split()
 
-        try:
-            if input_format_list[-2] in status_code_counter:
-                status_code_counter[input_format_list[-2]] += 1
-            sizes += int(input_format_list[-1])
-        except:
-            pass
+        input_format_list = line.split(" ")
 
-        if counter == 10:
-            print("File size:", sizes)
-            print_dict(status_code_counter)
-            counter = 0
+        if len(input_format_list) == 9:
+            if input_format_list[7] in status_code_counter:
+                status_code_counter[input_format_list[7]] += 1
+                sizes += int(input_format_list[8])
+
+                if counter == 10:
+                    print("File size:", sizes)
+                    print_dict(status_code_counter)
+                    counter = 0
 finally:
     print("File size:", sizes)
     print_dict(status_code_counter)
