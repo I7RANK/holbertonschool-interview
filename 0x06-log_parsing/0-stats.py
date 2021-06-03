@@ -21,6 +21,7 @@ status_code_counter = {
 
 
 def print_dict(dicti):
+    """ print a dictionary """
     for k, v in dicti.items():
         if v > 0:
             print(k, v)
@@ -28,6 +29,7 @@ def print_dict(dicti):
 
 try:
     for input_format in sys.stdin:
+        counter += 1
         input_format_list = input_format.split()
 
         try:
