@@ -28,9 +28,9 @@ def print_dict(dicti):
 
 
 try:
-    for input_format in sys.stdin:
+    for line in sys.stdin:
         counter += 1
-        input_format_list = input_format.split()
+        input_format_list = line.split()
 
         try:
             if input_format_list[-2] in status_code_counter:
