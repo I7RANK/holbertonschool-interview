@@ -36,12 +36,12 @@ try:
         if len(input_format_list) == 9:
             if input_format_list[7] in status_code_counter:
                 status_code_counter[input_format_list[7]] += 1
-                sizes += int(input_format_list[8])
+            sizes += int(input_format_list[8])
 
-                if counter == 10:
-                    print("File size:", sizes)
-                    print_dict(status_code_counter)
-                    counter = 0
+            if counter == 10:
+                print("File size:", sizes)
+                print_dict(status_code_counter)
+                counter = 0
 finally:
     print("File size:", sizes)
     print_dict(status_code_counter)
