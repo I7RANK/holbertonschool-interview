@@ -30,20 +30,17 @@ try:
     for input_format in sys.stdin:
         input_format_list = input_format.split()
 
-        if len(input_format_list) == 9:
-            counter += 1
+        try:
             if input_format_list[-2] in status_code_counter:
                 status_code_counter[input_format_list[-2]] += 1
+            sizes += int(input_format_list[-1])
+        except:
+            pass
 
-            try:
-                sizes += int(input_format_list[-1])
-            except:
-                pass
-
-            if counter == 10:
-                print("File size:", sizes)
-                print_dict(status_code_counter)
-                counter = 0
+        if counter == 10:
+            print("File size:", sizes)
+            print_dict(status_code_counter)
+            counter = 0
 finally:
     print("File size:", sizes)
     print_dict(status_code_counter)
