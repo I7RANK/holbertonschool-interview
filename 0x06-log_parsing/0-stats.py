@@ -30,7 +30,7 @@ try:
     for input_format in sys.stdin:
         input_format_list = input_format.split()
 
-        if len(input_format_list) > 8:
+        if len(input_format_list) > 2:
             counter += 1
             if input_format_list[-2] in status_code_counter:
                 status_code_counter[input_format_list[-2]] += 1
