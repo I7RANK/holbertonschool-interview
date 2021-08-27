@@ -4,6 +4,7 @@
  * swap - swaps two numbers in an array
  *
  * @array: array of integers
+ * @size: array size
  * @i: first index
  * @j: second index
 */
@@ -22,8 +23,9 @@ void swap(int *array, size_t size, size_t i, size_t j)
  * using the Heap sort algorithm
  *
  * @array: array of integers
- * @size: array size
+ * @sub_size: sub_array size
  * @i: subtree index
+ * @size: array size
 */
 void heapify(int *array, size_t sub_size, size_t i, size_t size)
 {
