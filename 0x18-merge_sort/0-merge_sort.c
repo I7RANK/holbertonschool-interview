@@ -17,6 +17,9 @@ void merge_sort(int *array, size_t size)
 {
 	int *buffer = NULL;
 
+	if (!array)
+		return;
+
 	buffer = malloc(sizeof(int *) * size);
 	if (!buffer)
 		return;
