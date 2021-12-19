@@ -39,8 +39,9 @@ def count_words(subreddit, word_list, hot_list=[], after=''):
                 title = i.get('data').get('title').lower().split()
 
                 for k in word_list:
-                    if k.lower() in title:
-                        word_dict[k.lower()] += 1
+                    for i in title:
+                        if k.lower() == i:
+                            word_dict[k.lower()] += 1
 
             for k in sorted(word_dict.keys()):
                 if word_dict[k] > 0:
